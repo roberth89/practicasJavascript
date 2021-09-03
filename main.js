@@ -10,7 +10,7 @@ var main = function() {
     var contador = 0;
     const intentos = 1;
 
-    // Evento al dar click derecho en la pagina 
+    // Evento al dar click derecho en la pagina  
     document.querySelector('html').onclick = function() {
 
         if (contador < intentos) {
