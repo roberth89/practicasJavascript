@@ -10,6 +10,10 @@ var main = function() {
     var contador = 0;
     const intentos = 1;
 
+    window.onload = function() {
+        document.getElementById("btnTest").onclick = eventosBoton;
+    };
+
     // Evento al dar click derecho en la pagina  
     document.querySelector('html').onclick = function() {
 
@@ -26,7 +30,9 @@ var main = function() {
     }
 
     // Ejemplo con flecha obtener valor.
-    let getTextBoxNumeros = a => document.getElementById("txtNumeros").value;
+    let getTextBoxNumeros = a => document.getElementById("txtFactorial").value;
+
+
 
     // En la fórmula Factorial se deben multiplicar todos los números enteros y positivos
     // que hay entre el número que aparece en la fórmula y el número 1.
@@ -57,12 +63,24 @@ var main = function() {
 
 
     function init() {
-        ejemploFlechaListaMap();
-        let resultado = factorialConCiclo(7);
-        let resultadoRecursivo = factorialRecursivo(7);
-        alert(`resultado Ciclo ${resultado} `);
-        alert(`resultado Recursivo ${resultadoRecursivo} `);
+        eventosBoton();
     }
+
+
+    function eventosBoton() {
+
+        ejemploFlechaListaMap();
+        if (getTextBoxNumeros() > 0) {
+
+            let resultado = factorialConCiclo(getTextBoxNumeros());
+            console.log((`resultado Ciclo ${resultado} `));
+            //  alert('resultado Ciclo' + resultado);
+            let resultadoRecursivo = factorialRecursivo(getTextBoxNumeros());
+            console.log(`resultado Recursivo ${resultadoRecursivo} `);
+            // alert('resultado Recursivo' + resultadoRecursivo);
+        }
+    }
+
 
 
     return {
