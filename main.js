@@ -7,6 +7,18 @@ var main = function() {
         'd'
     ];
 
+    var contador = 0;
+    const intentos = 1;
+
+    // Evento al dar click derecho en la pagina 
+    document.querySelector('html').onclick = function() {
+
+        if (contador < intentos) {
+            console.log('prueba clic en html con contador');
+            contador += 1;
+        }
+    }
+
     // Ejemplo Map con Flecha
     function ejemploFlechaListaMap(params) {
 
